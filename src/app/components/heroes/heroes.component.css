@@ -25,7 +25,7 @@
 }
 
 .heroes button:hover {
-    color: #2c3a41;
+    color: #6d9ed6;
     background-color: #e6e6e6;
     left: 0.1em;
 }
@@ -36,12 +36,12 @@
 }
 
 .heroes button.selected {
-    background-color: black;
+    background-color: #6d9ed6;
     color: white;
 }
 
 .heroes button.selected:hover {
-    background-color: #505050;
+    background-color: #3971b1;
     color: white;
 }
 
