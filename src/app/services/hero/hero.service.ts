@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HEROES } from "src/assets/mock-heroes";
-import { IHero } from "../interfaces/hero";
+import { IHero } from "../../interfaces/hero";
 import { Observable, of } from "rxjs";
 
 @Injectable({
