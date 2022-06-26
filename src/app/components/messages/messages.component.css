@@ -1,4 +1,9 @@
 /* MessagesComponent's private CSS styles */
+:host {
+    display: block;
+    margin: 2rem;
+}
+
 .header {
     display: flex;
     align-items: baseline;
