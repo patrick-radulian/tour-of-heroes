@@ -3,13 +3,17 @@ import { HEROES } from "src/assets/mock-heroes";
 import { IHero } from "../../interfaces/hero";
 import { Observable, of } from "rxjs";
 import { MessageService } from "../message/message.service";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
     providedIn: "root",
 })
 export class HeroService {
+    httpOptions = {
+        headers: new HttpHeaders({ "Content-Type": "application/json" }),
+    };
+
     private heroesUrl = "api/heroes";
 
     constructor(private http: HttpClient, private messageService: MessageService) {}
@@ -52,6 +56,13 @@ export class HeroService {
         return this.http.get<Array<IHero>>(this.heroesUrl).pipe(
             tap((_) => this.log("fetched heroes")),
             catchError(this.handleError<Array<IHero>>("getHeroes", []))
+        );
+    }
+
+    updateHero(hero: IHero): Observable<any> {
+        return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
+            tap((_) => this.log(`updated hero id=${hero.id}`)),
+            catchError(this.handleError<any>("updateHero"))
         );
     }
 }
