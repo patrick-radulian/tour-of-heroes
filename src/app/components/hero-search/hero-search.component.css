@@ -1,4 +1,8 @@
 /* HeroSearch private styles */
+:host {
+    display: flex;
+    justify-content: center;
+}
 
 label {
     display: block;
@@ -43,4 +47,5 @@ li {
 ul.search-result {
     margin-top: 0;
     padding-left: 0;
+    background-color: #ccc;
 }
