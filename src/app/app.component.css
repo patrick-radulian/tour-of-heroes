@@ -1,4 +1,15 @@
+h1,
+hr {
+    margin: 2rem;
+}
+
 app-heroes {
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
+    margin: 2rem;
+}
+
+app-messages {
+    display: block;
+    margin: 2rem;
 }
